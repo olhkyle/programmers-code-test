@@ -1,3 +1,4 @@
+// 시간 초과 -> 제곱근 판별을 통해 줄일 수 있다.
 function solution(n) {
     var answer = 0;
     for (let i = 2; i <= n; i++){
@@ -13,4 +14,26 @@ function solution(n) {
         }
     }
     return answer;
+}
+
+
+// 소수인지 판별하는 함수
+const isPrime = (n) => {
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function solution(n) {
+  var answer = 0;
+  for(let i = 2; i <= n; i++){
+      if(isPrime(i) == true){
+          answer ++;
+      }
+  }
+  
+  return answer;
 }
